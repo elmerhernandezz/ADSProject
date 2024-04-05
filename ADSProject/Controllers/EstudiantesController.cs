@@ -1,6 +1,7 @@
 ﻿using ADSProject.Interfaces;
 using ADSProject.Models;
 using Microsoft.AspNetCore.Mvc;
+using ADSProject.Utils;
 
 namespace ADSProject.Controllers
 {
@@ -8,8 +9,6 @@ namespace ADSProject.Controllers
     public class EstudiantesController : ControllerBase
     {
         private readonly IEstudiante estudiante;
-        private const string COD_EXITO = "000000";
-        private const string COD_ERROR = "999999";
         private string pCodRespuesta;
         private string pMensajeUsuario;
         private string pMensajeTecnico;
@@ -28,13 +27,13 @@ namespace ADSProject.Controllers
 
                 if (contador > 0)
                 {
-                    pCodRespuesta = COD_EXITO;
+                    pCodRespuesta = Constants.COD_EXITO;
                     pMensajeUsuario = "Registro insertado con exito";
                     pMensajeTecnico = pCodRespuesta + " || " + pMensajeUsuario;
                 }
                 else
                 {
-                    pCodRespuesta = COD_ERROR;
+                    pCodRespuesta = Constants.COD_ERROR;
                     pMensajeUsuario = "Ocurrio un problema al insertar el registro";
                     pMensajeTecnico = pCodRespuesta + " || " + pMensajeUsuario;
                 }
@@ -54,13 +53,13 @@ namespace ADSProject.Controllers
                 int contador = this.estudiante.ActualizarEstudiante(idEstudiante, estudiante);
                 if (contador > 0)
                 {
-                    pCodRespuesta = COD_EXITO;
+                    pCodRespuesta = Constants.COD_EXITO;
                     pMensajeUsuario = "Registro actualizado con exito";
                     pMensajeTecnico = pCodRespuesta + " || " + pMensajeUsuario;
                 }
                 else
                 {
-                    pCodRespuesta = COD_ERROR;
+                    pCodRespuesta = Constants.COD_ERROR;
                     pMensajeUsuario = "Ocurrio un problema al actualizar el registro";
                     pMensajeTecnico = pCodRespuesta + " || " + pMensajeUsuario;
                 }
@@ -81,13 +80,13 @@ namespace ADSProject.Controllers
 
                 if (eliminado)
                 {
-                    pCodRespuesta = COD_EXITO;
+                    pCodRespuesta = Constants.COD_EXITO;
                     pMensajeUsuario = "Registro eliminado con exito";
                     pMensajeTecnico = pCodRespuesta + " || " + pMensajeUsuario;
                 }
                 else
                 {
-                    pCodRespuesta = COD_ERROR;
+                    pCodRespuesta = Constants.COD_ERROR;
                     pMensajeUsuario = "Ocurrio un problema al eliminar el registro";
                     pMensajeTecnico = pCodRespuesta + " || " + pMensajeUsuario;
                 }
@@ -111,7 +110,7 @@ namespace ADSProject.Controllers
                 }
                 else
                 {
-                    pCodRespuesta = COD_ERROR;
+                    pCodRespuesta = Constants.COD_ERROR;
                     pMensajeUsuario = "No se encontraron datos del estudiante";
                     pMensajeTecnico = pCodRespuesta + " || " + pMensajeUsuario;
 

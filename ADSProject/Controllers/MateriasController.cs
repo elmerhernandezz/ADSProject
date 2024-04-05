@@ -5,25 +5,25 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ADSProject.Controllers
 {
-    [Route("api/carreras/")]
-    public class CarrerasController : ControllerBase
+    [Route("api/materias/")]
+    public class MateriasController : ControllerBase
     {
-        private readonly ICarrera carrera;
+        private readonly IMateria materia;
         private string pCodRespuesta;
         private string pMensajeUsuario;
         private string pMensajeTecnico;
 
-        public CarrerasController(ICarrera carrera)
+        public MateriasController(IMateria materia)
         {
-            this.carrera = carrera;
+            this.materia = materia;
         }
 
-        [HttpPost("agregarCarrera")]
-        public ActionResult<string> AgregarCarrera([FromBody] Carrera carrera)
+        [HttpPost("agregarMateria")]
+        public ActionResult<string> AgregarMateria([FromBody] Materia materia)
         {
             try
             {
-                int contador = this.carrera.AgregarCarrera(carrera);
+                int contador = this.materia.AgregarMateria(materia);
 
                 if (contador > 0)
                 {
@@ -45,12 +45,12 @@ namespace ADSProject.Controllers
             }
         }
 
-        [HttpPut("actualizarCarrera/{idCarrera}")]
-        public ActionResult<string> ActualizarCarrera(int idCarrera, [FromBody] Carrera carrera)
+        [HttpPut("actualizarMateria/{idMateria}")]
+        public ActionResult<string> ActualizarMateria(int idMateria, [FromBody] Materia materia)
         {
             try
             {
-                int contador = this.carrera.ActualizarCarrera(idCarrera, carrera);
+                int contador = this.materia.ActualizarMateria(idMateria, materia);
                 if (contador > 0)
                 {
                     pCodRespuesta = Constants.COD_EXITO;
@@ -71,12 +71,12 @@ namespace ADSProject.Controllers
             }
         }
 
-        [HttpDelete("eliminarCarrera/{idCarrera}")]
-        public ActionResult<string> EliminarCarrera(int idCarrera)
+        [HttpDelete("eliminarMateria/{idMateria}")]
+        public ActionResult<string> EliminarMateria(int idMateria)
         {
             try
             {
-                bool eliminado = this.carrera.EliminarCarrera(idCarrera);
+                bool eliminado = this.materia.EliminarMateria(idMateria);
 
                 if (eliminado)
                 {
@@ -98,15 +98,15 @@ namespace ADSProject.Controllers
             }
         }
 
-        [HttpGet("obtenerCarreraPorID/{idCarrera}")]
-        public ActionResult<Carrera> ObtenerCarreraPorID(int idCarrera)
+        [HttpGet("obtenerMateriaPorID/{idMateria}")]
+        public ActionResult<Materia> ObtenerMateriaPorID(int idMateria)
         {
             try
             {
-                Carrera carrera = this.carrera.ObtenerCarreraPorID(idCarrera);
-                if (carrera != null)
+                Materia materia = this.materia.ObtenerMateriaPorID(idMateria);
+                if (materia != null)
                 {
-                    return Ok(carrera);
+                    return Ok(materia);
                 }
                 else
                 {
@@ -123,14 +123,14 @@ namespace ADSProject.Controllers
             }
         }
 
-        [HttpGet("obtenerCarreras")]
-        public ActionResult<List<Carrera>> ObtenerCarreras()
+        [HttpGet("obtenerMaterias")]
+        public ActionResult<List<Materia>> ObtenerMaterias()
         {
             try
             {
-                List<Carrera> lstCarreras = this.carrera.ObtenerTodosLasCarreras();
+                List<Materia> lstMaterias = this.materia.ObtenerTodasLasMaterias();
 
-                return Ok(lstCarreras);
+                return Ok(lstMaterias);
             }
             catch (Exception)
             {

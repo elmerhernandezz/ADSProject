@@ -7,7 +7,7 @@ namespace ADSProject.Repositories
     {
         private List<Estudiante> lstEstudiantes = new List<Estudiante>
         {
-            new Estudiante{ IdEstudiante = 1, NmbresEstudiante = "JUAN CARLOS",
+            new Estudiante{ IdEstudiante = 1, NombresEstudiante = "JUAN CARLOS",
             ApellidosEstudiante = "PEREZ SOSA", CodigoEstudiante = "PS24I04002",
             CorreoEstudiante = "PS24I04002@usonsonate.edu.sv"
             }

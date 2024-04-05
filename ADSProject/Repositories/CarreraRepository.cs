@@ -12,13 +12,13 @@ namespace ADSProject.Repositories
             }
         };
 
-        public int ActualizarCarrera(int idCarrera, Carrera Carrera)
+        public int ActualizarCarrera(int idCarrera, Carrera carrera)
         {
             try
             {
                 int indice = lstCarreras.FindIndex(tmp => tmp.Id == idCarrera);
 
-                lstCarreras[indice] = Carrera;
+                lstCarreras[indice] = carrera;
 
                 return idCarrera;
             }

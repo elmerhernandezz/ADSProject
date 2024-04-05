@@ -30,3 +30,4 @@ C:\Users\MINEDUCYT\Documents\Lab Analisis\CLASE 3\ADSProject\ADSProject\obj\Debu
 C:\Users\MINEDUCYT\Documents\Lab Analisis\CLASE 3\ADSProject\ADSProject\obj\Debug\net8.0\ADSProject.pdb
 C:\Users\MINEDUCYT\Documents\Lab Analisis\CLASE 3\ADSProject\ADSProject\obj\Debug\net8.0\ADSProject.genruntimeconfig.cache
 C:\Users\MINEDUCYT\Documents\Lab Analisis\CLASE 3\ADSProject\ADSProject\obj\Debug\net8.0\ref\ADSProject.dll
+C:\Users\MINEDUCYT\Documents\Lab Analisis\CLASE 3\ADSProject\ADSProject\obj\Debug\net8.0\ADSProject.sourcelink.json
