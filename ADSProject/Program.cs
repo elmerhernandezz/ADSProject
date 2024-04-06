@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<IEstudiante, EstudianteRepository>();
+builder.Services.AddSingleton<IProfesor, ProfesorRepository>();
 builder.Services.AddSingleton<ICarrera, CarreraRepository>();
 builder.Services.AddSingleton<IMateria, MateriaRepository>();
 
