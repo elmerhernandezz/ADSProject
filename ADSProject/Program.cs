@@ -2,6 +2,7 @@ using ADSProject.DB;
 using ADSProject.Interfaces;
 using ADSProject.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Writers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,11 +15,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<IEstudiante, EstudianteRepository>();
-builder.Services.AddSingleton<IProfesor, ProfesorRepository>();
-builder.Services.AddSingleton<ICarrera, CarreraRepository>();
-builder.Services.AddSingleton<IMateria, MateriaRepository>();
-builder.Services.AddSingleton<IGrupo, GrupoRepository>();
+builder.Services.AddScoped<IEstudiante, EstudianteRepository>();
+builder.Services.AddScoped<IProfesor, ProfesorRepository>();
+builder.Services.AddScoped<ICarrera, CarreraRepository>();
+builder.Services.AddScoped<IMateria, MateriaRepository>();
+builder.Services.AddScoped<IGrupo, GrupoRepository>();
 
 var app = builder.Build();
 
