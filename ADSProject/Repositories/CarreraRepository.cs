@@ -67,10 +67,6 @@ namespace ADSProject.Repositories
         {
             try
             {
-                //int indice = lstCarreras.FindIndex(tmp => tmp.Id == idCarrera);
-
-                //lstCarreras.RemoveAt(indice);
-
                 var item = applicationDbContext.Carreras.SingleOrDefault(x => x.Id == idCarrera);
                 applicationDbContext.Carreras.Remove(item);
                 applicationDbContext.SaveChanges();
